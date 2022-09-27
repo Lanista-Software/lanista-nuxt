@@ -1,4 +1,5 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
+import { useAppConfig } from '#app'
 import { serverQueryContent } from '#content/server'
 const config = useAppConfig()
 export default defineEventHandler(async (event) => {
