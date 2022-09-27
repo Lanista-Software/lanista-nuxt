@@ -1,3 +1,5 @@
+
 export default defineAppConfig({
-    title: 'Hello Nuxt'
-  })
+  title: 'DXP Report',
+  hostname: 'https://www.dxpreport.com'
+})
