@@ -1,3 +1,0 @@
-Layouts are wrappers around pages that contain a common User Interface for several pages, such as a header and footer display. Layouts are Vue files using <slot /> components to display the page content. The layouts/default.vue file will be used by default. Custom layouts can be set as part of your page metadata.
-
-If you only have a single layout in your application, we recommend using app.vue with the <NuxtPage /> component instead.
