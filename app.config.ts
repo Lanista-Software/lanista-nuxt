@@ -1,5 +1,14 @@
-
 export default defineAppConfig({
-  title: 'DXP Report',
-  hostname: 'https://www.dxpreport.com'
+  myLayer: {
+    name: 'Lanista Nuxt Layer'
+  }
 })
+
+declare module '@nuxt/schema' {
+  interface AppConfigInput {
+    myLayer?: {
+      /** Project name */
+      name?: string
+    }
+  }
+}

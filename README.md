@@ -1,20 +1,45 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Layer Starter
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Create Nuxt extendable layer with this GitHub template.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
+pnpm install
+```
 
-# npm
-npm install
+## Working on your layer
 
-# pnpm
-pnpm install --shamefully-hoist
+Your layer is at the root of this repository, it is exactly like a regular Nuxt project, except you can publish it on NPM.
+
+The `.playground` directory should help you on trying your layer during development.
+
+Running `pnpm dev` will prepare and boot `.playground` directory, which imports your layer itself.
+
+## Distributing your layer
+
+Your Nuxt layer is shaped exactly the same as any other Nuxt project, except you can publish it on NPM.
+
+To do so, you only have to check if `files` in `package.json` are valid, then run:
+
+```bash
+npm publish --access public
+```
+
+Once done, your users will only have to run:
+
+```bash
+npm install --save your-layer
+```
+
+Then add the dependency to their `extends` in `nuxt.config`:
+
+```ts
+defineNuxtConfig({
+  extends: 'your-layer'
+})
 ```
 
 ## Development Server
@@ -22,7 +47,7 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## Production
@@ -30,13 +55,19 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+pnpm build
+```
+
+Or statically generate it with:
+
+```bash
+pnpm generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
